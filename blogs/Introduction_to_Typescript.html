@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <style>
+            .outer {
+                color: black;
+                font-family: "Roboto", "Helvetica Neue LT", "ui-sans-serif",
+                    "Plus Jakarta Sans", system-ui, -apple-system,
+                    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+                    Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+                    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                padding: 30px 20px 20px 20px;
+                margin: 0 auto;
+                max-width: 575px;
+            }
+
+            #rahulchouhan-s-letters {
+                text-align: center;
+                color: #2962ff;
+            }
+
+            #introduction-to-typescript {
+                font-weight: 700;
+                font-size: 3rem;
+            }
+
+            img {
+                height: 200px;
+                width: 300px;
+                margin: 10px;
+            }
+
+            p::selection {
+                background-color: #ffb8c2;
+            }
+
+            .author-name {
+                color: #a01744 !important;
+            }
+
+            .author-name-para {
+                margin: 0;
+                padding: 0;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            .date-of-publish {
+                font-size: 0.8rem;
+                margin: 0 0 60px 0;
+                padding: 0;
+            }
+
+            .first-social-media-icon {
+                margin-left: 10px;
+            }
+
+            .social-media-icon {
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="outer">
+            <h1 id="introduction-to-typescript">Introduction to TypeScript</h1>
+            <p class="author-name-para">
+                By
+                <span
+                    ><a class="author-name" href="https://www.rahulchouhan.in/"
+                        >Rahul Chouhan</a
+                    ></span
+                >
+            </p>
+            <div>
+                <p class="date-of-publish">
+                    Sunday, 9 September 2022
+                    <a
+                        href="https://www.linkedin.com/in/rahul-chouhan-730155169/"
+                        target="_blank"
+                        class="fa fa-linkedin social-media-icon first-social-media-icon"
+                        >
+                    </a>
+                    <a
+                        href="https://github.com/RahulChouhan96"
+                        target="_blank"
+                        class="fa fa-github social-media-icon"
+                        >
+                    </a>
+                    <a
+                        href="https://twitter.com/RahulChouhan97"
+                        target="_blank"
+                        class="fa fa-twitter social-media-icon"
+                        >
+                    </a>
+                </p>
+            </div>
+
+            <p>
+                <strong>TypeScript</strong> is a programming language. It is
+                statically typed and in simple terms it means every variable or
+                object needs to have a specific data type. If you understand
+                JavaScript, TypeScript is JavaScript + Static Type. Understand
+                what is static and dynamic typings from below.
+            </p>
+            <p>
+                <strong>Static Typed</strong>: There are 2 types of languages,
+                statically typed and dynamically typed. In statically typed, we
+                can&#39;t change/overwrite the data type of a variable. But, in
+                dynamically typed we can. Dynamically typed behaviour is
+                flexible but it can lead us to unexpected errors such as a
+                function expecting Number type and its changed to String before.
+            </p>
+            <pre><code class="lang-js"><span class="hljs-comment">// Dynamically Typed</span>
+let <span class="hljs-built_in">name</span> = <span class="hljs-string">"Rahul"</span>;
+<span class="hljs-built_in">name</span> = <span class="hljs-number">4</span>;   <span class="hljs-comment">// POSSIBLE</span>
+</code></pre>
+            <pre><code class="lang-ts"><span class="hljs-comment">// Statically Typed</span>
+let <span class="hljs-built_in">name</span> = <span class="hljs-string">"Rahul"</span>;
+<span class="hljs-built_in">name</span> = <span class="hljs-number">4</span>;   <span class="hljs-comment">// NOT POSSIBLE</span>
+</code></pre>
+            <p>
+                First script is written in Dynamically Typed language and you
+                can see we can set number type value in string variable
+                <code>name</code>. But in 2nd script which is Statically Typed
+                we can&#39;t.
+            </p>
+            <h2 id="why-to-learn-typescript-">Why to learn TypeScript?</h2>
+            <ol>
+                <li>
+                    <p>
+                        <strong>Debugging</strong>: Debugging is process of
+                        solving errors or bugs. Debugging becomes really easy
+                        with static typed nature of TypeScript. Consider this
+                        example:
+                    </p>
+                    <pre><code class="lang-ts"> <span class="hljs-keyword">function</span> <span class="hljs-title">getWeightInKG</span>(weightInPound: number) {
+     <span class="hljs-keyword">return</span> <span class="hljs-type">weightInPound/2.2</span>;
+ }
+</code></pre>
+                    <p>
+                        The above function accepts weight in pounds and converts
+                        into KG. <code>weightInPound</code> parameter is of type
+                        <code>number</code>. But what if developer passes weight
+                        string as an input (Happens quite often) then the code
+                        inside will break. So, by adding
+                        <code>number</code> type to parameter developer
+                        immediately get an error that it takes number as an
+                        argument and you passed string.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Code Completion</strong>: When we define the
+                        type of variable or object, typeScript remembers and
+                        shows us the methods and prperties accordingly.
+                        <img
+                            src="https://newslettersimages.s3.ap-south-1.amazonaws.com/Intellisence.png"
+                            alt="Intellisence"
+                        />
+                    </p>
+                    <p>
+                        In above image, you can see that by giving type
+                        <code>number</code> to variable
+                        <code>num</code> typescript shows us all methods of
+                        number.
+                    </p>
+                </li>
+            </ol>
+            <p>
+                For medium to large applications, Typescript must be used
+                instead JavaScript.
+            </p>
+        </div>
+    </body>
+</html>
