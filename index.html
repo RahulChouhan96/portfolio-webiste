@@ -110,24 +110,25 @@
 		<!-- Footer -->
 		<footer id="footer">
 			<section>
-				<h2>Message me</h2>
-				<form method="post" action="#">
+				<h2><a id="subscribe_my_newsletter">Subscribe Newsletter</a></h2>
+				<form>
 					<div class="fields">
-						<div class="field">
+						<!-- <div class="field">
 							<label for="name">Name</label>
 							<input type="text" name="name" id="name" />
-						</div>
+						</div> -->
 						<div class="field">
 							<label for="email">Email</label>
 							<input type="text" name="email" id="email" />
 						</div>
-						<div class="field">
+						<!-- <div class="field">
 							<label for="message">Message</label>
 							<textarea name="message" id="message" rows="3"></textarea>
-						</div>
+						</div> -->
 					</div>
 					<ul class="actions">
-						<li><input type="submit" value="Send Message" /></li>
+						<li><input id="subscribe_newsletter_btn" onclick="subscribeNewsletter()" type="submit" value="Subscribe" /></li>
+						<!-- <li><input id="subscribe_newsletter_btn" type="submit" value="Subscribe" /></li> -->
 					</ul>
 				</form>
 			</section>
@@ -171,6 +172,27 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/aboutme.js"></script>
+
+	<script>
+		async function subscribeNewsletter(event) {
+			const emailElem = document.getElementById("email");
+			const emailId = emailElem.value;
+
+			await fetch("https://o2hio9mp2e.execute-api.ap-south-1.amazonaws.com/default/newsletter/subscribe", {
+				method: 'POST',
+				mode: "cors",
+				'Cache-Control': 'no-cache',
+				Accept: "*/*",
+				"Accept-Encoding": "gzip, deflate, br",
+				credentials: 'same-origin',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({ emailId }),
+				
+			});
+		}
+	</script>
 
 </body>
 
